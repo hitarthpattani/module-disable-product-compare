@@ -1,0 +1,22 @@
+<?xml version="1.0"?>
+<!--
+/**
+ * @package     HitarthPattani\DisableProductCompare
+ * @author      Hitarth Pattani <hitarthpattani@gmail.com>
+ * @copyright   Copyright © 2021. All rights reserved.
+ */
+ -->
+<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:module:Magento_Config:etc/system_file.xsd">
+    <system>
+        <section id="catalog">
+            <group id="product_compare" translate="label" type="text" sortOrder="1100" showInDefault="1" showInWebsite="1" showInStore="1">
+                <label>Product Compare</label>
+                <field id="enabled" translate="label comment" type="select" sortOrder="10" showInDefault="1" showInWebsite="1" showInStore="1" canRestore="1">
+                    <label>Enable</label>
+                    <source_model>Magento\Config\Model\Config\Source\Yesno</source_model>
+                    <comment>This configuration will be set to "No" to remove compare features.</comment>
+                </field>
+            </group>
+        </section>
+    </system>
+</config>

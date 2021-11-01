@@ -1,0 +1,41 @@
+<?xml version="1.0" ?>
+<!--
+/**
+ * @package     HitarthPattani\DisableProductCompare
+ * @author      Hitarth Pattani <hitarthpattani@gmail.com>
+ * @copyright   Copyright © 2021. All rights reserved.
+ */
+ -->
+<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:framework:ObjectManager/etc/config.xsd">
+    <!-- Disable Blocks Based on Configuration -->
+    <type name="Magento\Catalog\Block\Product\View\AddTo\Compare">
+        <plugin name="HitarthPattani_DisableProductCompare::view_add_to_compare_empty_to_html_block"
+            type="HitarthPattani\DisableProductCompare\Plugin\EmptyToHtmlBlock"/>
+    </type>
+    <type name="Magento\Catalog\Block\Product\ProductList\Item\AddTo\Compare">
+        <plugin name="HitarthPattani_DisableProductCompare::item_add_to_compare_empty_to_html_block"
+            type="HitarthPattani\DisableProductCompare\Plugin\EmptyToHtmlBlock"/>
+    </type>
+    <type name="HitarthPattani\DisableProductCompare\Block\DisableCompare">
+        <plugin name="HitarthPattani_DisableProductCompare::disable_compare_empty_to_html_block"
+            type="HitarthPattani\DisableProductCompare\Plugin\EmptyToHtmlBlock"/>
+    </type>
+
+    <!-- Disable Controllers Based on Configuration -->
+    <type name="Magento\Catalog\Controller\Product\Compare\Add">
+        <plugin name="HitarthPattani_DisableProductCompare::disable_compare_add_controller"
+            type="HitarthPattani\DisableProductCompare\Plugin\DisableCompareControllers"/>
+    </type>
+    <type name="Magento\Catalog\Controller\Product\Compare\Clear">
+        <plugin name="HitarthPattani_DisableProductCompare::disable_compare_clear_controller"
+            type="HitarthPattani\DisableProductCompare\Plugin\DisableCompareControllers"/>
+    </type>
+    <type name="Magento\Catalog\Controller\Product\Compare\Index">
+        <plugin name="HitarthPattani_DisableProductCompare::disable_compare_index_controller"
+            type="HitarthPattani\DisableProductCompare\Plugin\DisableCompareControllers"/>
+    </type>
+    <type name="Magento\Catalog\Controller\Product\Compare\Remove">
+        <plugin name="HitarthPattani_DisableProductCompare::disable_compare_remove_controller"
+            type="HitarthPattani\DisableProductCompare\Plugin\DisableCompareControllers"/>
+    </type>
+</config>
